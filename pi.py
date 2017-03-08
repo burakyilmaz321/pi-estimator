@@ -1,6 +1,11 @@
 import numpy as np
 
 def estimate(n=1000):
+	"""
+	Estimates Pi using Monte Carlo Metho
+	Takes an integer n: number of random points as input
+	Outputs an estimaton of pi
+	"""
 	random = np.random.rand(2*n).reshape(n, 2)
 
 	inCircle = []
@@ -9,6 +14,5 @@ def estimate(n=1000):
 		if r[0]**2 + r[1]**2 <= 1:
 			inCircle.append(r)
 
-	pi = float(len(inCircle)) / float(n) * 4
+	return float(len(inCircle)) / float(n) * 4
 	
-	print "Estimated Pi is: " + str(pi)
